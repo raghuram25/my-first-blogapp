@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
-class Post(models.Model):
+class Post(models.Model):                   #Post Model
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -13,4 +13,4 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title# Create your models here.
+        return self.title
